@@ -17,16 +17,17 @@
     public class Product {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int id;
+        private Integer id;//int to Integer
+        private Integer stockQuantity; //Cannot map null into type int
         private String name;
         private String description;
         private String brand;
         private BigDecimal price;
         private String category;
-        @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
+        @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-dd-MM")
         private Date releaseDate;
         private boolean productAvailable;
-        private int stockQuantity;
+
         //image
 
         private String imageName;
